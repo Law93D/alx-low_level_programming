@@ -7,7 +7,7 @@
  */
 int main(void)
 {
-	char i;
+	char alp[27] = "abcdefghijklmnopqrstuvwxyz"
 
 	for (i = 'a'; i <= 'z'; i++)
 	{
