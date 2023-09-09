@@ -4,7 +4,6 @@
  * main - task function
  * Return: Always 0
  */
-
  int main(void) {
     char i;
 
