@@ -1,18 +1,22 @@
 #include <stdio.h>
 
 /**
- * main - Prints the alphabetic
+ * main - entry point
  *
- * Return: Always 0 (Success)
+ * Return: Always 0 (SUCCESS)
  */
+
 int main(void)
 {
-	char alp[27] = "abcdefghijklmnopqrstuvwxyz"
+char c;
 
-	for (i = 'a'; i <= 'z'; i++)
+c = 'a';
+while
+	(c <= 'z')
 	{
-		putchar(i);
-		putchar('\n');
+		putchar(c);
+		c++;
 	}
-	return (0);
+putchar('\n');
+return (0);
 }
