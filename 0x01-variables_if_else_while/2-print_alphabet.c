@@ -8,15 +8,13 @@
 
 int main(void)
 {
-char c;
+	int n = 97;
 
-c = 'a';
-while
-	(c <= 'z')
+	while (n <= 122)
 	{
-		putchar(c);
-		c++;
+		putchar(n);
+		n++;
 	}
-putchar('\n');
-return (0);
+	putchar('\n');
+	return (0);
 }
