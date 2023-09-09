@@ -1,10 +1,11 @@
 #include <stdio.h>
 /**
- * main - Entry point
+ * main - Entry point of the program
+ *
  * Return: Always 0 (Success)
  */
 
-int mani(void)
+int main(void)
 {
 	int a;
 
