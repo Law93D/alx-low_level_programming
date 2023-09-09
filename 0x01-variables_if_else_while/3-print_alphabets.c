@@ -1,8 +1,8 @@
 #include <stdio.h>
 
 /**
- * main - task function
- * Return: Always 0
+ * main - entry point
+ * Return: Always 0 (Success)
  */
 
 int main(void)
@@ -13,7 +13,7 @@ int main(void)
     {
 	    putchar(i);
     }
-    for(i = 'A'; i <= 'Z'; i++)
+    for (i = 'A'; i <= 'Z'; i++)
     {
 	    putchar(i);
     }
