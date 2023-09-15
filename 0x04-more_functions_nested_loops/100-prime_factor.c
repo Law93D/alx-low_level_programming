@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <math.h>
+#include <main.h>
 
 /**
  * main - finds and  prints the largest prime factor of the number
@@ -11,20 +11,13 @@
 int main(void)
 {
 
-	long long num = 612852475143;
-        long long largestPrimeFactor = 2;
+	unsigned long int i, n = 612852475143;
 
-        while (num > largestPrimeFactor)
-       	{
-        if (num % largestPrimeFactor == 0)
-       	{
-            num /= largestPrimeFactor;
-        } else {
-            largestPrimeFactor++;
-        }
-        }
-
-        printf("The largest prime factor is: %lld\n", largestPrimeFactor);
-
-        return 0;
+	for (i = 3; i < 782849; i = i + 2)
+	{
+		while ((n % i == 0) && (n != i))
+			n = n / i;
+	}
+	printf("%lu\n", n);
+	return (0);
 }
