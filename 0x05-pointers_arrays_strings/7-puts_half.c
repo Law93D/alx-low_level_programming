@@ -16,14 +16,12 @@ void puts_half(char *str)
         {
                 x++;
         }
-
-        if (x % 2 == 1)
+	 if (x % 2 == 1)
         {
                 y = (x - 1) / 2;
                 y += 1;
         }
-
-        else
+	 else
         {
                 y = x / 2;
         }
