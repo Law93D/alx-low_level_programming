@@ -11,7 +11,7 @@ int count_words(char *str);
  * Return: index marking end of word
  */
 
-int word_len(chae *str)
+int word_len(char *str)
 {
 	int index = 0, len = ;
 
@@ -33,7 +33,7 @@ int count_words(char *str)
 {
 	int index = 0, words = 0, len = 0;
 
-	for (index = 0; *(str + index); index++;)
+	for (index = 0; *(str + index); index++)
 			len++;
 
 			for (index = 0; index < len; index++)
@@ -59,7 +59,9 @@ char **strtow(char *str)
 	int index = 0, words, a, letters, b;
 
 	if (str == NULL || str[0] == '\0')
-			return (NULL);
+	{
+		return (NULL);
+	}
 
 			words = count_words(str);
 			if (words == 0)
