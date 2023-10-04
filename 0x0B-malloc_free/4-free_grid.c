@@ -1,6 +1,7 @@
 #include "main.h"
 #include <stdlib.h>
 #include <stdio.h>
+
 /**
  * free_grid - a function that frees a 2 dimensional grid
  * @height: input
@@ -8,7 +9,7 @@
  * Return: 0
  */
 
-void fre_grid(int **grid, int height)
+void free_grid(int **grid, int height)
 {
 	int a;
 
