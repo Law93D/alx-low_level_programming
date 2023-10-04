@@ -5,25 +5,19 @@
  * create_array - array of characters
  * @size: size of array
  * @c: character
- * Return: array filled
+ * Return: pointer to array, NULL if fail
  * /
  
- char *create_array(unsigned int size, char c)
- {
- 	unsigned int i;
-	char *s;
-
-	if (size == 0)
-	return (null);
+char *create_array(unsigned int size, char c)
+{
+	unsigned int i;
+	char *str;
 
 	s = malloc(size * sizeof(char));
-
-	if (s == NULL)
-	return (NULL);
+	if (size == 0 || str == NULL)
+		return (NULL);
 
 	for (i = 0; i < size; i++)
-	{
-		s[i] = c;
-	}
-	return (s);
+		str[i] = c;
+	return (str);
 }
