@@ -29,12 +29,12 @@ char *argstostr(int ac, char **av)
 		a++;
 	}
 
-	s = malloc((sizeof(char) * ch) + ac +1);
+	s = malloc((sizeof(char) * ch) + ac + 1);
 
 	a = 0;
 	while (av[a])
 	{
-		while(av[a][b])
+		while (av[a][b])
 		{
 			s[c] = av[a][b];
 			c++;
