@@ -7,50 +7,41 @@
  * string_nconcat - function that concatenates two strings
  * @s1: input
  * @s2: input
- * @n: input
+ * @n: input number of bytes from s2 to concatenate to s1
  * Return: 0
  */
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int i = 0, j = 0, k = 0, l = 0;
+	unsigned int i = 0, j = 0, len = 0, len = 0;
 	char *str;
 
-	if (s1 == NULL)
-	{
-		s1 = "";
-	}
-	if (s2 == NULL)
-	{
-		s2 = "";
-	}
+	while (s1 && s1[len1])
+		len1++;
+	while (s2 && s2[len2])
+		len2++;
 
-	while (s2[i])
-		i++;
-
-	if (n >= i)
-	{
-		l = i + k;
-	}
+	if (n < len2)
+		s = malloc(sizeof(char) * (len1 + n + 1));
 	else
-		l = i + n;
+		s = malloc(sizeof(char) * (len1 + len2 + 1));
 
-	str = malloc(sizeof(char) * l + 1);
-	if (str == NULL)
-		return (NULL);
+	if (!s)
+		return(NULL);
 
-	while (j < l)
+	while (i < len1)
 	{
-		if (j <= i)
-		{
-			str[j] = s1[k];
-		}
-		if (j >= i)
-		{
-			str[j] = s2[k];
-		}
-		j++;
+		s[i] = s1[i];
+		i++;
 	}
-	str[j] = '\0';
+
+	while (n < len2 && i < (len1 + n))
+		s[i++] = s2[j++];
+
+	while (n >= len && i < (len1 + len2))
+		s[i++] = s2[j++];
+
+	s[i] = '\0';
+
 	return (str);
 }
