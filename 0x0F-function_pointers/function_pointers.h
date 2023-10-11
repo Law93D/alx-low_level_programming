@@ -9,5 +9,6 @@ void array_iterator(int *array, size_t size, void (*action)(int));
 int int_index(int *array, int size, int (*cmp)(int));
 int _putchar(char c);
 int (*get_op_func(char *s))(int, int);
+int main(int __attribute__((__unused__)) argc, char *argv[]);
 
 #endif
