@@ -8,7 +8,7 @@
 /**
  * struct list_s - singly linked list
  * @str: malloced string
- * len: length of string
+ * @len: length of string
  * @next: pointer to next node
  */
 
