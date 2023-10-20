@@ -55,7 +55,7 @@ list_t *add_node_end(list_t **head, const char *str)
 	list_t *temp;
 	list_t *new_node;
 
-	if (head == NULL || str ==NULL)
+	if (head == NULL || str == NULL)
 		return (NULL);
 	new_node = create_node(str);
 	if (new_node == NULL)
