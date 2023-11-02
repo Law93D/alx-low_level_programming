@@ -76,7 +76,7 @@ int main(int argc, char *argv[])
 		}
 
 		w = write(f_to, buffer, r);
-		if (w != r)
+		if (f_to == -1 || w == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't read to %s\n", argv[2]);
 			free(buffer);
