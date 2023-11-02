@@ -84,9 +84,9 @@ int main(int argc, char *argv[])
 		}
 
 		r = read(f_fr, buffer, 1024);
-		f_to = open(argv[2], O_WRONLY | O_APPEND, 0664);
+		f_to = open(argv[2], O_WRONLY | O_APPEND);
 
-	} while (r < 0);
+	} while (r > 0);
 
 	free(buffer);
 	close(f_fr);
