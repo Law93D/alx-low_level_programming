@@ -68,7 +68,7 @@ int main(int argc, char *argv[])
 	f_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 
 	do {
-		if (f_fr == 1 || r == -1)
+		if (f_fr == -1 || r == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 			free(buffer);
@@ -76,7 +76,7 @@ int main(int argc, char *argv[])
 		}
 
 		w = write(f_to, buffer, r);
-		if (f_to == -1 || w == -1)
+		if (w != r)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't read to %s\n", argv[2]);
 			free(buffer);
@@ -84,9 +84,9 @@ int main(int argc, char *argv[])
 		}
 
 		r = read(f_fr, buffer, 1024);
-		f_to = open(argv[2], O_WRONLY | O_APPEND);
+		f_to = open(argv[2], O_WRONLY | O_APPEND, 0664);
 
-	} while (r > 0);
+	} while (r < 0);
 
 	free(buffer);
 	close(f_fr);
