@@ -5,3 +5,4 @@ int main(void) {
     printf("%s\n", SCHOOL);
     return 0;
 }
+/* School */
