@@ -1,36 +1,52 @@
-#include "search_algos.h"
 #include <stdio.h>
-#include <stdlib.h>
+#include "search_algos.h"
 
 /**
- * exponential_search - Searches for a value in a sorted array of integers
- *                      using the exponential search algorithm.
- * @array: A pointer to the first element of the array to search.
+ * advanced_binary - Searches for a value in a sorted array of integers.
+ * @array: A pointer to the first element of the array to search in.
  * @size: The number of elements in the array.
  * @value: The value to search for.
  *
- * Return: If the value is not present in array or array is NULL, -1 is returned.
- *         Otherwise, the index where value is located is returned.
+ * Return: The index where the value is located.
+ *         -1 if the value is not present in the array or if the array is NULL.
  */
-int exponential_search(int *array, size_t size, int value)
+int advanced_binary(int *array, size_t size, int value)
 {
-    size_t bound = 1;
-    size_t prev = 0;
+    size_t i;
+    int idx;
 
-    if (array == NULL || size == 0)
+    if (!array || size == 0)
         return (-1);
 
-    while (bound < size && array[bound] < value)
+    printf("Searching in array:");
+    for (i = 0; i < size; i++)
     {
-        printf("Value checked array[%lu] = [%d]\n", bound, array[bound]);
-        prev = bound;
-        bound *= 2;
+        printf(" %d", array[i]);
+        if (i < size - 1)
+            printf(",");
     }
+    printf("\n");
 
-    printf("Value found between indexes [%lu] and [%lu]\n", prev, bound);
+    if (size == 1 && array[0] != value)
+        return (-1);
 
-    if (bound >= size)
-        bound = size - 1;
+    idx = size / 2;
 
-    return (binary_search(array, value, prev));
+    if (array[idx] == value)
+    {
+        if (array[idx - 1] < value)
+            return (idx);
+        return (advanced_binary(array, idx + 1, value));
+    }
+    else if (array[idx] > value)
+    {
+        return (advanced_binary(array, idx, value));
+    }
+    else
+    {
+        int sub_result = advanced_binary(array + idx + 1, size - idx - 1, value);
+        if (sub_result == -1)
+            return (-1);
+        return (idx + 1 + sub_result);
+    }
 }
